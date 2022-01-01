@@ -1,9 +1,9 @@
 import './App.css';
-import Data_Fetching from './components/Data_Fetching';
+import FetchData from './components/FetchData';
 const categories = ["DevOps", "Linux", "Cloud", "Docker"];
 function App() {
   return (
-    <Data_Fetching cat={categories[3].toString()} />
+    <FetchData cat={categories[0]} />
   );
 }
 
