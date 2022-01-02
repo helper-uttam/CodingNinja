@@ -7,7 +7,7 @@ const FetchData =  (props) => {
     const [ques, setQues] = useState([]);
     const [answers, setAnswer] = useState([{}]);
     const [corrAns, setCorrectAnswers] = useState([]);
-    
+   
     const fetch = async() => {
         const response = await axios.get(`https://quizapi.io/api/v1/questions?
         apiKey=${process.env.REACT_APP_QUIZ_API_KEY}

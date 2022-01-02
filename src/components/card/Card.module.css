@@ -1,9 +1,30 @@
 .card_body{
     padding: 5%;
 }
-
+.card_body > h1{
+    font-family: 'Shizuru', cursive;
+    font-weight: 400;
+    font-size: 80px;
+}
+.card_body > h4{
+    font-family: 'Secular One', sans-serif;
+    font-size: 40px;
+}
 .options{
     display: flex;
     justify-content: space-between;
-    min-height: 100px;
+    flex-wrap: wrap;
+    min-height: min-content;
+}
+.one, .two, .three, .four, .five{
+    padding: 3%;
+    box-shadow: 0 4px 8px 0;
+    font-size: 40px;
+    font-family: 'Source Code Pro', monospace;
+    border-radius: 30px;
+    margin: 50px;
+}
+.one:hover, .two:hover, .three:hover, .four:hover, .five:hover{
+   background-image: linear-gradient(to right ,#1abc9c,#16a085);
+    cursor: pointer;
 }
