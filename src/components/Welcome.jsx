@@ -6,7 +6,7 @@ const Welcome = () => {
         document.getElementById('question_area').scrollIntoView();
     } 
     return <div className="welcome">
-        <h1 class="kreep">
+        <h1 className="kreep">
         <button className="button button5" onClick={startMusic}>⬇</button>
         </h1>   
     </div>

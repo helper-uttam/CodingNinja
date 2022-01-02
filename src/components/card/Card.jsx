@@ -12,7 +12,8 @@ const Card = (props) => {
             document.getElementById(lastId).style.color="red";
         }
     }
- 
+    
+    console.log(props.a[0].answer_e );
     return(<div id="question_area" className={classes.card_body}>
         <h1>Question</h1>
         <h4>{props.q[0]}</h4>
@@ -24,15 +25,24 @@ const Card = (props) => {
             <div  id="2" className={classes.two} onClick={checkAns}>
                 {props.a[0].answer_b}
             </div>
-            <div  id="3" className={classes.three} onClick={checkAns}>
+            {
+                props.a[0].answer_c !== null &&
+                <div  id="3" className={classes.three} onClick={checkAns}>
                 {props.a[0].answer_c}
-            </div>
-            <div  id="4" className={classes.four} onClick={checkAns}>
+                </div>
+            }
+            {
+                props.a[0].answer_d !== null &&
+                <div  id="4" className={classes.four} onClick={checkAns}>
                 {props.a[0].answer_d}
-            </div>
-            {/* <div id="5" className={classes.five} onClick={checkAns}>
+                </div>
+            }
+            {
+                props.a[0].answer_e !== null &&
+                <div id="5" className={classes.five} onClick={checkAns}>
                 {props.a[0].answer_e}
-            </div> */}
+                </div>
+            }
         </div>
     </div>);
 }
