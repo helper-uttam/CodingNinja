@@ -12,19 +12,30 @@
 }
 .options{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     flex-wrap: wrap;
     min-height: min-content;
 }
 .one, .two, .three, .four, .five{
     padding: 3%;
-    box-shadow: 0 4px 8px 0;
     font-size: 40px;
     font-family: 'Source Code Pro', monospace;
     border-radius: 30px;
     margin: 50px;
-}
-.one:hover, .two:hover, .three:hover, .four:hover, .five:hover{
-   background-image: linear-gradient(to right ,#1abc9c,#16a085);
+    font-size: 4rem;
+    display: inline-block;
     cursor: pointer;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    cursor: pointer;
+}
+
+.one:hover, .two:hover, .three:hover, .four:hover, .five:hover{
+    color: white;
+    text-shadow: none;
 }

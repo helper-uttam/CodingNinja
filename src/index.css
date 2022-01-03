@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&family=Shizuru&family=Source+Code+Pro:ital,wght@1,500&display=swap');
+:root {
+  --clr-neon: hsl(317 100% 54%);
+  --clr-bg: hsl(323 21% 16%);
+}
+
 html{
   scroll-behavior: smooth;
 }
@@ -9,6 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--clr-bg);
+  color: var(--clr-neon);
 }
 
 code {

@@ -8,8 +8,12 @@ const Card = (props) => {
         lastId = target.id;
         if(props.corr[0].toString() === lastId){
             document.getElementById(lastId).style.color="green";
+            let audio = new Audio("/assets/evil_laugh.mp3");
+            audio.play()
         }else{
             document.getElementById(lastId).style.color="red";
+            let audio = new Audio("/assets/oh_no.mp3");
+            audio.play()
         }
     }
     
