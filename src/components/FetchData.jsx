@@ -43,9 +43,9 @@ const FetchData =  (props) => {
             }
             setCorrectAnswers(indexOfCorrectAns);
             //printing all state variables
-            console.log(ques[0]);
-            console.log(answers[0]); //object of 4 answers
-            console.log(corrAns[0]);
+            // console.log(ques[0]);
+            // console.log(answers[0]); //object of 4 answers
+            // console.log(corrAns[0]);
         }
     }
     useEffect(()=>{ 

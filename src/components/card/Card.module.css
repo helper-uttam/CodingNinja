@@ -39,3 +39,12 @@
     color: white;
     text-shadow: none;
 }
+.next{
+    padding: 3%;
+    font-size: 50px;
+    font-family: 'Arial Black';   
+    background-color: var(--clr-neon);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
