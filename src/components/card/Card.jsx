@@ -4,16 +4,16 @@ import classes from './Card.module.css';
 const Card = (props) => {
     var [counter, setCounter] = useState(0);
     var lastId = null;
-    let font_color = getComputedStyle(document.body).getPropertyValue('--clr-neon');
 
     const handleCounter = () => {
         setCounter(++counter);
-        console.log("clicked");
+        // console.log("clicked");
     }
+
     const checkAns = (e) => {
         var target = e.target || e.srcElement;
         lastId = target.id;
-        console.log(props.corr[counter].toString() + "  " + lastId);
+        console.log(counter + " " + props.corr[counter] + "  " + lastId);
         if(props.corr[counter].toString() === lastId){
             document.getElementById(lastId).style.color="green";
             let audio = new Audio("/assets/evil_laugh.mp3");

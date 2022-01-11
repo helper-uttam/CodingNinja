@@ -3,50 +3,73 @@ import { useEffect, useState } from 'react';
 import Card from './card/Card';
 
 const FetchData =  (props) => {
-    
-    const [ques, setQues] = useState([]);
+    const [data, setData] = useState();
+    const [ques, setQues] = useState([]); // array of 10 questions
     const [answers, setAnswer] = useState([{}]);
-    const [corrAns, setCorrectAnswers] = useState([]);
-   
+    const [corrAns, setCorrectAnswers] = useState([]);  //array of correct answers
+    
+    const questionHandler = (data) => {
+        let quest = [];
+        data.map((item) => {
+            quest.push(item.question);
+        });
+        setQues(quest);
+    }
+
+    const answersHandler = (data) => {
+        let options = [];
+        data.map((item)=>{
+            options.push(item.answers);
+        });
+        setAnswer(options)
+    }
+    const correctAnsHandler = (data) => {
+        let correctAns = [];
+        data.map((item)=>{
+            let x = item.correct_answers;
+            for(const key in x){
+                if(x[key] === 'true'){
+                    // correctAns.push(x[key]);
+                    if(key === 'answer_a_correct'){
+                        correctAns.push('1');
+                    }
+                    else if(key === 'answer_b_correct'){
+                        correctAns.push('2')
+                    }
+                    else if(key === 'answer_c_correct'){
+                        correctAns.push('3');
+                    }
+                    else if(key === 'answer_d_correct'){
+                        correctAns.push('4');
+                    }
+                    else if(key === 'answer_e_correct'){
+                        correctAns.push( '5');
+                    }
+                    else
+                        correctAns.push('6');
+                }
+            }
+        })
+       setCorrectAnswers(correctAns);
+    }
+
     const fetch = async() => {
         const response = await axios.get(`https://quizapi.io/api/v1/questions?
         apiKey=${process.env.REACT_APP_QUIZ_API_KEY}
         &limit=10
         &category=${props.cat}`
         )
-        if(response.status != 200){
-            console.log("Something went wrong, while fetching data ...!");
-        }else{
-            let fetchedData = response.data;
-            let questions = [];
-            let answer = [];
-            let correct_answers = [];
-            let indexOfCorrectAns = [];
-            fetchedData.map((item) => {
-                questions.push(item.question);
-                answer.push(item.answers);
-                correct_answers.push(item.correct_answers);
-            })
-            setQues(questions);
-            setAnswer(answer);
-            let answerIndex = 1;
-            
-            for (let index = 0; index < 10; index++) {
-                Object.values(correct_answers[index]).forEach(item => {
-                    if(item === 'true'){
-                        indexOfCorrectAns.push(answerIndex);
-                        answerIndex = 1;
-                        return;
-                    }
-                    answerIndex++;
-                });
+        .then((response) => {
+            if(response.status !== 200){
+                throw new Error("Something went wrong!");
+                return;
             }
-            setCorrectAnswers(indexOfCorrectAns);
-            //printing all state variables
-            // console.log(ques[0]);
-            // console.log(answers[0]); //object of 4 answers
-            // console.log(corrAns[0]);
-        }
+            let fetchedData =  response.data;
+            setData(fetchedData);
+            questionHandler(fetchedData);
+            answersHandler(fetchedData);
+            correctAnsHandler(fetchedData);
+        })
     }
     useEffect(()=>{ 
         try{
