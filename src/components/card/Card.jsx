@@ -28,7 +28,7 @@ const Card = (props) => {
     // console.log(props.a[0].answer_e );
     return(<div id="question_area" className={classes.card_body}>
         <h1>Question</h1>
-        <h4>{props.q[counter]}</h4>
+        <h4 className={classes.que}>{props.q[counter]}</h4>
         <h4>Options:</h4>
         <div  className={classes.options}>
             <div id="1" className={classes.one} onClick={checkAns} >

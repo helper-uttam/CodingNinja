@@ -5,16 +5,17 @@ import Welcome from './components/Welcome';
 
 function App() {
   const [rend, setrend] = useState(false);
-let categ = "DevOps";
+  var [categ, setCateg] = useState("DevOps");
+
 const getCategory = (selectedCategory) => {
   categ = selectedCategory;
-  // console.log(rend);
   setrend(true);
-  // console.log(categ);
+  setCateg(selectedCategory);
+  console.log(categ);
 }
 
   return <>
-    <Welcome category={getCategory}/>
+    {rend === false && <Welcome category={getCategory}/>}
     {rend === true && <FetchData  cat={categ}></FetchData>}
     </>
 }

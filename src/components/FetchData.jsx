@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import Card from './card/Card';
 
 const FetchData =  (props) => {
-    const [data, setData] = useState();
     const [ques, setQues] = useState([]); // array of 10 questions
     const [answers, setAnswer] = useState([{}]);
     const [corrAns, setCorrectAnswers] = useState([]);  //array of correct answers
@@ -62,10 +61,9 @@ const FetchData =  (props) => {
         .then((response) => {
             if(response.status !== 200){
                 throw new Error("Something went wrong!");
-                return;
             }
+            console.log(props.cat);
             let fetchedData =  response.data;
-            setData(fetchedData);
             questionHandler(fetchedData);
             answersHandler(fetchedData);
             correctAnsHandler(fetchedData);

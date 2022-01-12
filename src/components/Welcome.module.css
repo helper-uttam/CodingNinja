@@ -1,15 +1,18 @@
 .welcome{
     text-align: center;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
+.tags{
+  margin: 3% 0% 4% 0%;
+}
 .button{
+    position: absolute;
     text-align: center;
     border-radius: 50%;
     width: 180px;
     height: 180px;
-    margin-top: 20vh;
+    margin-top: 5vh;
     font-size: 50px;
     color: white;
     background-color: var(--clr-bg);
@@ -22,6 +25,10 @@
   background-color: var(--clr-neon);
 }
 
+.options{
+  font-family: 'Arial';
+  font-size: 3rem;
+}
 /*Bounce*/
 @keyframes kreep {
     0% {-webkit-transform: scale(1.1,.9);
@@ -42,10 +49,9 @@ h1.kreep:hover {
 
 #courses{
   text-align: center;
-  margin-left: 35%;
   font-size: 60px;
   font-family: 'Shizuru', cursive;
-  width: 520px;
+  width: 800px;
   height: 150px;
   border-radius: 40px;
   color: var(--clr-neon);
@@ -72,4 +78,12 @@ h1.kreep:hover {
   font-size: 8rem;
   margin-top: -20px;
   margin-bottom: 100px;
+}
+
+
+/* mobile view */
+@media screen and (max-width: 600px){
+  .title{
+    font-size: 500px;
+  }
 }
