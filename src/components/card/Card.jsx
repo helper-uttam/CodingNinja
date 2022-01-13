@@ -1,40 +1,50 @@
 import { useState } from 'react';
+import  Score, { increaseComp, increaseHuman } from '../Score';
 import classes from './Card.module.css';
+import Winning from "../Winning";
 
 const Card = (props) => {
     var [counter, setCounter] = useState(0);
     var lastId = null;
     var [loading, setLoading] = useState(false);
+    var [user, setUser] = useState(1);
+    var [comp, setComp] = useState(1);
 
     const handleCounter = () => {
         setCounter(++counter);
-        // console.log("clicked");
+        // console.log(counter);
     }
 
     const checkAns = (e) => {
         var target = e.target || e.srcElement;
         lastId = target.id;
-        console.log(counter + " " + props.corr[counter] + "  " + lastId);
+        console.log(counter + " " + user + " " + comp);
         if(props.corr[counter].toString() === lastId){
             document.getElementById(lastId).style.color="green";
             let audio = new Audio("/assets/evil_laugh.mp3");
-            audio.play()
+            audio.play();
+            setUser(user+1);
+            increaseHuman();
         }else{
             document.getElementById(lastId).style.color="red";
             let audio = new Audio("/assets/oh_no.mp3");
-            audio.play()
+            audio.play();
+            setComp(comp+1);
+            increaseComp();
         }
         setLoading(true);
         setTimeout(() => {
             handleCounter();
             document.getElementById(lastId).style.color="";
             setLoading(false);
-        }, 4000);
+        }, 1000);
     }
     
     // console.log(props.a[0].answer_e );
     return(<div id="question_area" className={classes.card_body}>
-        <h1>Question</h1>
+        <h1><Score /></h1>
+        {counter >= 10 && <Winning won={user >= comp ?"You":"Computer"} />}
+        {counter < 10 && <>
         <h4 className={classes.que}>{counter+1}.  {props.q[counter]}</h4>
         <h4>Options:</h4>
         <div  className={classes.options}>
@@ -64,6 +74,7 @@ const Card = (props) => {
             }
             <button className={classes.next} onClick={handleCounter}>{loading ? "Please wait ..." : "Skip"}</button>
         </div>
+        </>}
     </div>);
 }
 

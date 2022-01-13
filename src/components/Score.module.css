@@ -1,0 +1,22 @@
+.main{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Arial';
+}
+h1{
+    font-family: 'Calibri';
+}
+.comp{
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    border: solid var(--clr-neon);
+    box-shadow: var(--clr-neon) 10px 10px;
+}
+.human{
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    border: solid var(--clr-neon);
+    box-shadow: var(--clr-neon) 10px 10px;
+}
