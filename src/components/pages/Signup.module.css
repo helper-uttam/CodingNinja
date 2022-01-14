@@ -1,0 +1,46 @@
+h1{
+    font-size: 80px;
+    font-family: 'Shizuru', cursive;
+    text-align: center;
+    margin-top: -2px;
+}
+.container{
+    text-align: center;
+    width: 600px;
+    padding: 4%;
+    border: solid var(--clr-neon);
+    border-radius: 20px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: palevioletred 8px 8px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    padding: 20px;
+    background-color: var(--clr-bg);
+    border: solid 1px var(--clr-neon);
+    font-size: 40px;
+    margin: 2%;
+    border-radius: 10px;
+    color: var(--clr-neon);
+}
+button{
+    padding: 30px;
+    font-size: 30px;
+    font-family: 'Calibri';
+    margin: 3%;
+    border-radius: 20px;
+    background-color: var(--clr-bg);
+    color: gray;
+    transition: 1s;
+    cursor: pointer;
+}
+.buttons > button:hover{
+    color: white;
+    box-shadow: var(--clr-neon) 4px 4px;
+}

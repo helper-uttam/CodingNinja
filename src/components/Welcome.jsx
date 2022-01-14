@@ -7,6 +7,7 @@ const Welcome = (props) => {
         props.category("DevOps");
         else
         props.category( e.target.value);
+        startMusic();
     }
     
     const startMusic = () => {
@@ -28,10 +29,7 @@ const Welcome = (props) => {
         <option className={classes.options} value="bash">BASH</option>
         <option className={classes.options} value="Linux">LINUX</option>
     </select>
-    </div>
-        <h1 className={classes.kreep}>
-        <button className={classes.button}  onClick={startMusic}>GO</button>
-        </h1>   
+    </div>  
     </div>
 }
 
