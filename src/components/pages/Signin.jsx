@@ -13,9 +13,18 @@ const Signin = () => {
         console.log(passwordRef.current.value);
         console.log(passwordConfirmRef.current.value);
     }
-    return <>
-    <h1>Quiz Game</h1>
-    <div className={classes.container}>
+    return <div className={classes.main}>
+    <div id={classes.container}>
+        <div id={classes.welcome}>
+            <h1>Welcome</h1>
+        </div>
+        <div id={classes.arrows}>
+            <div class={classes.down} id={classes.one}></div>
+            <div class={classes.down} id={classes.two}></div>
+            <div class={classes.down} id={classes.three}></div>
+        </div>
+</div>
+    <div className={classes.box}>
         <form>
             <input type="email" placeholder="abc@gmail.com" ref={emailRef} autoComplete="true"></input>
             <input type="password" placeholder="Set password" ref={passwordRef} autoComplete="true"></input>
@@ -27,7 +36,7 @@ const Signin = () => {
             <Link  style={{color: "gray", textDecoration: "underline"}} to="/signup">Create new account?</Link>
         </div>
     </div>
-    </>
+    </div>
 }
 
 export default Signin;
