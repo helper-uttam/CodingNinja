@@ -38,6 +38,7 @@ const Card = (props) => {
             document.getElementById(lastId).style.color="";
             setLoading(false);
         }, 1000);
+        console.log(counter);
     }
     
     // console.log(props.a[0].answer_e );

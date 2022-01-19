@@ -26,7 +26,7 @@ const getCategory = (selectedCategory) => {
       </Route>  
       <Route path="/signup">
         <Signup/>
-      </Route>   
+      </Route>     
      </>
 
 }

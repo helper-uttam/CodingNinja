@@ -13,6 +13,12 @@ const Welcome = (props) => {
     const startMusic = () => {
         let audio = new Audio("/assets/background.mp3");
         audio.play()
+        audio.addEventListener('ended', function () {
+            audio.currentTime = 0;
+            audio.play();
+        }, false);
+        audio.togglePlay = audio.togglePlay.bind(audio);
+
         document.getElementById('question_area').scrollIntoView();
         optionHandler("DevOps");
     } 
