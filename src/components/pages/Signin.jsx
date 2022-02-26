@@ -13,7 +13,7 @@ const Login = () => {
             // can be one of 'email' or 'phone_number_sms'
             identifierType: 'email',
             // Add the API key copied from 5th step
-            apiKey: '0404c21c-3baa-430a-8420-24e0c032995b',
+            apiKey: REACT_APP_SAWO_API_KEY,
             // Add a callback here to handle the payload sent by sdk
             onSuccess: payload => {
                 console.log(payload)
