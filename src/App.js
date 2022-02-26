@@ -1,13 +1,16 @@
 import { Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import Navbar from './components/Navbar';
 import FetchData from './components/FetchData';
 import Welcome from './components/Welcome';
 import Signin from "./components/pages/Signin";
-import Signup from "./components/pages/Signup";
+import ParticleBackground from './components/Particles/ParticleBackground';
 
 function App() {
   const [rend, setrend] = useState(false);
   var [categ, setCateg] = useState("DevOps");
+  const [auth, setAuth] = useState(null);
 
 const getCategory = (selectedCategory) => {
   categ = selectedCategory;
@@ -15,18 +18,30 @@ const getCategory = (selectedCategory) => {
   setCateg(selectedCategory);
   console.log(categ);
 }
+  useEffect(()=>{
+    setAuth(localStorage.getItem('email'));
+  },[]);
 
   return <>
-      <Route path="/welcome">  
-        {rend === false && <Welcome category={getCategory}/>}
-        {rend === true && <FetchData  cat={categ}></FetchData>}
+      <ParticleBackground />
+      <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "45%"
+          }}
+        >
+      {auth &&  <Navbar />}
+      <Route path="/game">  
+        {rend && <FetchData  cat={categ}></FetchData>}
       </Route> 
-      <Route path="/signin">
-        <Signin/>
-      </Route>  
-      <Route path="/signup">
-        <Signup/>
-      </Route>     
+      <Route path="/">
+        {!auth && <Signin/>}
+        {auth &&  <Welcome category={getCategory}/>}
+      </Route> 
+      </div> 
      </>
 
 }

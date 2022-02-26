@@ -1,0 +1,20 @@
+.nav{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn{
+    margin: 2%;
+    padding: 3%;
+    background-color: hsl(323 21% 16%);;
+    cursor: pointer;
+    color:hsl(317 100% 54%);
+    font-size: 1.6rem;
+    border: none;
+    box-shadow: 5px 5px 5px 0;
+    border-radius: 10px;
+    transition: 0.8s;
+}
+.btn:hover{
+    background-color: hsl(317 100% 54%);
+    color: white;
+}

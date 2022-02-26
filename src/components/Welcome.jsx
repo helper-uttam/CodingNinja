@@ -3,10 +3,11 @@ import classes from "./Welcome.module.css";
 const Welcome = (props) => {
 
     const optionHandler = (e) => {
+        console.log(e.target.value);
         if(e === "DevOps")
         props.category("DevOps");
         else
-        props.category( e.target.value);
+        props.category(e.target.value);
         startMusic();
     }
     
@@ -19,8 +20,9 @@ const Welcome = (props) => {
         }, false);
         audio.togglePlay = audio.togglePlay.bind(audio);
 
-        document.getElementById('question_area').scrollIntoView();
-        optionHandler("DevOps");
+        // document.getElementById('question_area').scrollIntoView();
+        // optionHandler("DevOps");
+        window.Location = "/game";
     } 
     return <div className={classes.welcome}>
     <div>

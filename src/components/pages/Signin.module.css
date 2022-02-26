@@ -1,227 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
-
-* {
-  box-sizing: border-box;
-}
-
-.main{
-  padding-top: 10%;
-  display: flex;
-  background: url("https://i.ibb.co/4jLVfS5/black-twill.png");
-  justify-content: space-around;
-  height: 100vh;
-  align-self: center;
-}
-#containter {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0 auto;
-  align-items: flex-start;
-}
-
-#welcome {
-  min-width: 455px;
-  color: white;
-  font-size: 4em;
-  font-family: Sacramento;
+.container{
   text-align: center;
-  margin-bottom: -120px;
-  padding-bottom: 0;
-  color: #f3b4f3;
-  filter: drop-shadow(1px 1px #f13ff7) drop-shadow(-1px -1px #f13ff7)
-    drop-shadow(1px -1px #f13ff7) drop-shadow(-1px 1px #f13ff7);
-  animation: glow infinite 3s, flicker infinite 7s, fade infinite 5s;
+  margin-top: 3%;
 }
 
-@keyframes glow {
-  0% {
-    filter: drop-shadow(2px 2px 4px #c61af8) drop-shadow(2px -2px 6px #c61af8)
-      drop-shadow(3px -3px 3px #ac0ef0);
-  }
-
-  50% {
-    filter: drop-shadow(2px -4px 7px #e82bfb) drop-shadow(4px -3px 3px #e82bfb);
-  }
-
-  75% {
-    filter: drop-shadow(3px 2px 4px #c61af8) drop-shadow(2px -3px 2px #c61af8)
-      drop-shadow(3px -3px 6px #ac0ef0);
-  }
-
-  100% {
-    filter: drop-shadow(2px 2px 4px #c61af8) drop-shadow(2px -2px 4px #c61af8)
-      drop-shadow(3px -3px 3px #ac0ef0);
-  }
+.sawoContainer{
+  width: max-content;
+  height: 100%;
+  margin-top: 10%;
+  margin-left: 30%;
+  box-shadow: 0 4px 4px 0;
 }
 
-@keyframes flicker {
-  0% {
-    opacity: 1;
-  }
-  24% {
-    color: rgba(243, 180, 243, 1);
-  }
-  25% {
-    color: rgba(250, 218, 250, 0.3);
-  }
-  26% {
-    color: rgba(243, 180, 243, 1);
-  }
 
-  29% {
-    color: rgba(243, 180, 243, 1);
-  }
-  30% {
-    color: rgba(250, 218, 250, 0.4);
-  }
-  31% {
-    color: rgba(243, 180, 243, 1);
-  }
+.form{
+  display: inline-block;
 }
-
-@keyframes fade {
-  0% {
-    color: rgba(243, 180, 243, 1);
-  }
-
-  25% {
-    color: rgba(243, 180, 243, 0.9);
-  }
-
-  30% {
-    color: rgba(243, 180, 243, 0.8);
-  }
-
-  40% {
-    color: rgba(243, 180, 243, 0.9);
-  }
-
-  45% {
-    color: rgba(243, 180, 243, 0.8);
-  }
-
-  48% {
-    color: rgba(243, 180, 243, 0.9);
-  }
-
-  60% {
-    color: rgba(243, 180, 243, 1);
-  }
-}
-
-#arrows {
-  min-width: 455px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.input{
   text-align: center;
-  margin-top: 130px;
-  padding-top: 0;
+  width: 200%;
+  height: 100px;
+  border: none;
+  border-bottom: solid 5px;
+  background-color: white;
+  font-size: 30px;
+  margin: 5%;
+  margin-left: -50%;
+  padding: 2%;
+  border-radius: 10px;
 }
 
-.down {
-  font-family: Sacramento;
-  font-size: 4em;
-  text-align: center;
-  font-weight: bold;
-  border-bottom: 8px solid #02f4f2;
-  border-left: 8px solid #02f4f2;
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  margin: 0 auto;
-  transform: rotate(-45deg);
-  margin-bottom: -30px;
-  border-radius: 7px;
-  filter: drop-shadow(1px 1px #0a5252) drop-shadow(-1px -1px #0a5252)
-    drop-shadow(1px -1px #0a5252) drop-shadow(-1px 1px #0a5252);
-  animation: arrow 3s infinite, arrow-flicker 3s infinite;
-}
-
-#two {
-  filter: drop-shadow(2px 2px 6px #2a807f) drop-shadow(2px -2px 6px #2a807f)
-    drop-shadow(3px -3px 3px #2a807f);
-  animation-delay: 1s;
-}
-
-#three {
-  filter: drop-shadow(2px 2px 6px #2a807f) drop-shadow(2px -2px 6px #2a807f)
-    drop-shadow(3px -3px 3px #2a807f);
-  animation-delay: 2s;
-}
-
-@keyframes arrow {
-  0% {
-    filter: drop-shadow(2px 2px 3px #2a807f) drop-shadow(2px -2px 6px #2a807f)
-      drop-shadow(3px -3px 3px #2a807f);
+@media screen and (max-width: 650px) {
+  .container{
+      margin-top: 0%;
   }
-
-  55% {
-    filter: drop-shadow(2px 4px 4px #176363) drop-shadow(4px -3px 6px #2a807f)
-      drop-shadow(-3px -2px 6px #2a807f);
-  }
-
-  75% {
-    filter: drop-shadow(3px 2px 4px #176363) drop-shadow(2px -3px 4px #176363)
-      drop-shadow(3px 6px 4px #2a807f) drop-shadow (-2px 3px 6px #219e9e);
-  }
-
-  100% {
-    filter: drop-shadow(2px 2px 5px #2a807f) drop-shadow(2px -2px 4px #2a807f)
-      drop-shadow(3px -3px 3px #176363);
-  }
-}
-
-@keyframes arrow-flicker {
-  0% {
-    border-left: solid 6px rgba(98, 227, 226, 0.6);
-    border-bottom: solid 6px rgba(98, 227, 226, 0.5);
-  }
-}
-
-h1{
-    font-size: 80px;
-    font-family: 'Shizuru', cursive;
-    text-align: center;
-    margin-top: -2px;
-}
-.box{
-    text-align: center;
-    width: 600px;
-    height: 600px;
-    padding: 4%;
-    border: solid var(--clr-neon);
-    border-radius: 20px;
-    box-shadow: palevioletred 8px 8px;
-}
-form{
-    display: flex;
-    flex-direction: column;
-}
-input{
-    padding: 20px;
-    background-color: var(--clr-bg);
-    border: solid 1px var(--clr-neon);
-    font-size: 40px;
-    margin: 2%;
-    border-radius: 10px;
-    color: var(--clr-neon);
-}
-button{
-    padding: 30px;
-    font-size: 30px;
-    font-family: 'Calibri';
-    margin: 3%;
-    border-radius: 20px;
-    background-color: var(--clr-bg);
-    color: gray;
-    transition: 1s;
-    cursor: pointer;
-}
-.buttons > button:hover{
-    color: white;
-    box-shadow: var(--clr-neon) 4px 4px;
 }
