@@ -1,6 +1,8 @@
 import classes from "./Welcome.module.css";
+import { useHistory } from "react-router-dom";
 
 const Welcome = (props) => {
+    const history = useHistory();
 
     const optionHandler = (e) => {
         console.log(e.target.value);
@@ -8,6 +10,7 @@ const Welcome = (props) => {
         props.category("DevOps");
         else
         props.category(e.target.value);
+        history.push('/game');
         startMusic();
     }
     
@@ -18,11 +21,9 @@ const Welcome = (props) => {
             audio.currentTime = 0;
             audio.play();
         }, false);
-        audio.togglePlay = audio.togglePlay.bind(audio);
 
         // document.getElementById('question_area').scrollIntoView();
         // optionHandler("DevOps");
-        window.Location = "/game";
     } 
     return <div className={classes.welcome}>
     <div>
