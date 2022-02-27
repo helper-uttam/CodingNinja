@@ -39,7 +39,7 @@ const getCategory = (selectedCategory) => {
       </Route> 
       <Route path="/">
         {!auth && <Signin/>}
-        {auth &&  <Welcome category={getCategory}/>}
+        {auth && !rend && <Welcome category={getCategory}/>}
       </Route> 
       </div> 
      </>

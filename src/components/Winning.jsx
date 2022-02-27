@@ -9,7 +9,6 @@ const Winning = (props) => {
             audio.currentTime = 0;
             audio.play();
         }, false);
-        audio.togglePlay = audio.togglePlay.bind(audio);
     }
     if(props.won !== "Computer"){
         applause();

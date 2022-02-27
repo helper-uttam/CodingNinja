@@ -38,13 +38,13 @@ const Card = (props) => {
             document.getElementById(lastId).style.color="";
             setLoading(false);
         }, 1000);
-        console.log(counter);
+        // console.log(typeof user + " " + comp);
     }
     
     // console.log(props.a[0].answer_e );
     return(<div id="question_area" className={classes.card_body}>
         <h1><Score /></h1>
-        {counter >= 10 && <Winning won={user >= comp ?"You":"Computer"} />}
+        {counter >= 10 && <Winning won={user >= comp ? "You":"Computer"} />}
         {counter < 10 && <>
         <h4 className={classes.que}>{counter+1}.  {props.q[counter]}</h4>
         <h4>Options:</h4>
