@@ -4,7 +4,26 @@
   margin-top: 12%;
   margin-left: 22%;
 }
-
+.contact_container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+.contact_container > h2{
+  align-self: center;
+}
+.contact{
+  display: flex;
+  justify-content: center;
+}
+.contact > a {
+  text-decoration: none;
+  color:  var(--clr-neon);
+  margin-right: 5%;
+}
+.contact > a:hover {
+  color: white;
+}
 @media screen and (max-width: 1180px) {
   .sawoContainer{
     margin-top: 35vh;

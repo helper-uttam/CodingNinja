@@ -31,6 +31,15 @@ const Login = () => {
     
     return  <div className={classes.sawoContainer}>
                 <div className={classes.sawo} id="sawo-container" style={width < 1180 ? {marginTop: "10px", height:"100%", width:"100%"}: {height:"50vh", width:"50vw"}}></div>
+                <div className={classes.contact_container}>
+                    <h2>Made with 💙 by Uttam</h2>
+                    <div className={classes.contact}>
+                        <a href="https://github.com/helper-uttam">GitHub</a>
+                        <a href="https://twitter.com/Uttamku74410059">Twitter</a>
+                        <a href="http://pubgofficial.me/portfolio">My Portfolio</a>
+                        <a href="https://www.linkedin.com/in/uttam-kumar-511a411ba">LinkedIn</a>
+                    </div>
+                </div>
             </div>
 }
 export default Login;
