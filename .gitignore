@@ -24,3 +24,7 @@ yarn-error.log*
 
 # dotenv environment variables file
 .env
+
+#firebase
+.firebase
+firebase-config.js
