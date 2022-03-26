@@ -12,7 +12,6 @@ const Card = (props) => {
 
     const handleCounter = () => {
         setCounter(++counter);
-        // console.log(counter);
     }
 
     const checkAns = (e) => {

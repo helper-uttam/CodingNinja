@@ -22,3 +22,12 @@ h1{
     border: solid var(--clr-neon);
     box-shadow: var(--clr-neon) 10px 10px;
 }
+.time{
+    border: 5px solid;
+    border-color: --var(--clr-neon);
+    border-radius: 100px;
+    padding: 1% 4%;
+}
+.red{
+    color: red;
+}

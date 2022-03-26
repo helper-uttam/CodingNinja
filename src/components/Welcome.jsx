@@ -27,7 +27,7 @@ const Welcome = (props) => {
     } 
     return <div className={classes.welcome}>
     <div>
-        <h1 className={classes.title}>Quiz Time</h1>
+        <h1 className={classes.title}>Learn With Fun</h1>
     </div>
     <div className={classes.tags}>
     <select onChange={optionHandler} id={classes.courses}>
