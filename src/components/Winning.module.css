@@ -1,6 +1,6 @@
 .container{
     text-align: center;
-    margin-top: 10%;
+    margin-top: -10%;
 }
 .title{
     font-size: 100px;
@@ -9,4 +9,18 @@
     font-size: 80px;
     font-family: 'Calibri';
     text-shadow: salmon 3px 3px;
+}
+.btn{
+    padding: 2%;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--clr-neon);
+    background-color: var(--bg-dark);
+    border-color: var(--clr-neon);
+    transition: 1s;
+}
+.btn:hover{
+    background-color: var(--clr-neon);
+    color: white;
+    cursor: pointer;
 }

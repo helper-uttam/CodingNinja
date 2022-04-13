@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import  Score, { increaseComp, increaseHuman } from '../Score';
+import  Score, { increaseComp, increaseHuman, setTime } from '../Score';
 import classes from './Card.module.css';
 import Winning from "../Winning";
+
 
 const Card = (props) => {
     var [counter, setCounter] = useState(0);
@@ -13,7 +14,11 @@ const Card = (props) => {
     const handleCounter = () => {
         setCounter(++counter);
     }
-
+    const handleCounter_click = () => {
+        setTime();
+        console.log('clicked');
+        handleCounter();
+    }
     const checkAns = (e) => {
         var target = e.target || e.srcElement;
         lastId = target.id;
@@ -33,7 +38,7 @@ const Card = (props) => {
         }
         setLoading(true);
         setTimeout(() => {
-            handleCounter();
+            handleCounter_click();
             document.getElementById(lastId).style.color="";
             setLoading(false);
         }, 1000);
@@ -42,7 +47,7 @@ const Card = (props) => {
     
     // console.log(props.a[0].answer_e );
     return(<div id="question_area" className={classes.card_body}>
-        <h1><Score /></h1>
+        {counter < 10 && <h1><Score skipQues={handleCounter_click} compScore={setComp} /></h1>}
         {counter >= 10 && <Winning won={user >= comp ? "You":"Computer"} />}
         {counter < 10 && <>
         <h4 className={classes.que}>{counter+1}.  {props.q[counter]}</h4>
@@ -72,7 +77,7 @@ const Card = (props) => {
                 {props.a[counter].answer_e}
                 </div>
             }
-            <button className={classes.next} onClick={handleCounter}>{loading ? "Please wait ..." : "Skip"}</button>
+            <button className={classes.next} onClick={handleCounter_click}>{loading ? "Please wait ..." : "Skip"}</button>
         </div>
         </>}
     </div>);

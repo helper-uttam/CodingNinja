@@ -4,7 +4,7 @@ const Navbar = () => {
 
     const handleClick = () => {
         localStorage.clear();
-        window.location.reload();
+        window.location = "https://quizgame-9611d.web.app";
     }
 
     return <div className={classes.nav}>
